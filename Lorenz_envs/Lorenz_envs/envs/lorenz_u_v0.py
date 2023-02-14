@@ -40,11 +40,11 @@ class Lorenzu(gym.Env):
         self.ax = self.fig.add_subplot(projection="3d")
         self.ax.scatter(self.goal_state[0],self.goal_state[1],self.goal_state[2], s=100, color="red")
 
-        self.sphere_R = 0.15
+        self.sphere_R = 1
         self.sigma = 10
         self.r = 28
         self.b = 8/3
-        self.C = ((self.b ** 2) * ((self.sigma + self.r) ** 2)) / 4 * (self.b - 1)
+        self.C = ((self.b ** 2) * ((self.sigma + self.r) ** 2)) / (4 * (self.b - 1))
         self.alpha = [100, 100, 100]
         self.dt = 0.01
         self.dyn = {"sigma":self.sigma , "R":self.r, "b": self.b}
@@ -56,8 +56,8 @@ class Lorenzu(gym.Env):
         self.isopen = True
         action_range_high = np.array([2.0, 2.0, 2.0], dtype=np.float32)
         action_range_low = np.array([-2.0, -2.0, -2.0], dtype=np.float32)
-        self.high_env_range = np.array([20.0, 27.0, 50.0], dtype=np.float32)
-        self.low_env_range = np.array([-20.0, -27.0, -50.0], dtype=np.float32)
+        self.high_env_range = np.array([39.0, 39.0, 77.0], dtype=np.float32)
+        self.low_env_range = np.array([-39.0, -39.0, -1.0], dtype=np.float32)
         self.action_space = spaces.Box(low=action_range_low, high=action_range_high, shape = (3,),dtype=np.float32)
         self.observation_space = spaces.Box(low=self.low_env_range, high=self.high_env_range, shape = (3,),dtype=np.float32)
 
@@ -162,11 +162,18 @@ class Lorenzu(gym.Env):
 
     def reset(self):
         #put even closer to reward
-        high = np.array([self.goal_state[0] + 2.0,self.goal_state[1]+ 2.0,self.goal_state[2]+ 2.0], dtype=np.float32)
-        low = np.array([self.goal_state[0]-2.0,self.goal_state[1]-2.0, self.goal_state[2]-2.0], dtype=np.float32)  # We enforce symmetric limits.
+        high = self.high_env_range
+        low = self.low_env_range  # We enforce symmetric limits.
         # print ('high:', high )
         # print ('low:', low )
-        self.state = self.np_random.uniform(low=low, high=high)
+        y3 = self.np_random.uniform(low=low[2], high=high[2])
+        new_C = self.C - np.square(y3 - self.r - self.sigma)
+        y2 = self.np_random.uniform(low=-np.sqrt(new_C), high=np.sqrt(new_C))
+        y23 = np.square(y2) + np.square(y3 - self.r - self.sigma)
+        new_C  = self.C - y23
+        y1 = self.np_random.uniform(low=-np.sqrt(new_C), high=np.sqrt(new_C))
+        # print (np.square(y1) + np.square(y2) + np.square(y3 - self.r - self.sigma))
+        self.state = np.array([y1,y2,y3])
         # print ('state:', self.state )
         #self.collected_states = self.collected_states.append(self.state)
         self.last_u = None

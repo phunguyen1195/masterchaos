@@ -359,11 +359,11 @@ eval_callback = SummaryWriterCallback(env, best_model_save_path='./logs/',
 model = PPO('MlpPolicy', env ,gamma=0.98, 
     # use_sde=True,
     # sde_sample_freq=4,
-    learning_rate=linear_schedule(1e-3),
+    # learning_rate=linear_schedule(1e-3),
     # learning_rate=linear_schedule(4e-3),
-    # learning_rate=1e-3, 
-    tensorboard_log="./Lorenz_tensorboard/", verbose=1)
-model.learn(total_timesteps=250000, callback=eval_callback)
+    learning_rate=1e-3, 
+    tensorboard_log="./Lorenz_tensorboard/")
+model.learn(total_timesteps=2500000, callback=eval_callback)
 
 model.save("ppo_lorenz_0_015rad_100alpha_rreward_fixed")
 
