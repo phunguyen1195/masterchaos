@@ -14,4 +14,4 @@ register(id='rossler-v0',entry_point='Lorenz_envs.envs:Rossler', max_episode_ste
 
 register(id='lorenz_y-v0',entry_point='Lorenz_envs.envs:Lorenzy', max_episode_steps=1000,) 
 
-register(id='lorenz_r-v0',entry_point='Lorenz_envs.envs:Lorenzr', max_episode_steps=1000,) 
+register(id='lorenz_le-v0',entry_point='Lorenz_envs.envs:Lorenzle', max_episode_steps=1000,) 
