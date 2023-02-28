@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/015970994/masterchaos/test_stablebaselines3_getploy.py", line 86, in <module>
+    ax = fig.gca(projection="3d")
+TypeError: FigureBase.gca() got an unexpected keyword argument 'projection'

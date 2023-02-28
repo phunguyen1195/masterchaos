@@ -1,0 +1,310 @@
+Using cpu device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Logging to ./Lorenz_tensorboard/PPO_5
+/home/015970994/anaconda3/envs/mastering-chaos/lib/python3.10/site-packages/stable_baselines3/common/evaluation.py:67: UserWarning: Evaluation environment is not wrapped with a ``Monitor`` wrapper. This may result in reporting modified episode lengths and rewards, if other wrappers happen to modify these. Consider wrapping environment first with ``Monitor`` wrapper.
+  warnings.warn(
+Eval num_timesteps=500, episode_reward=-6318323.45 +/- 30432.45
+Episode length: 5000.00 +/- 0.00
+------------------------------------
+| eval/              |             |
+|    mean action     | -0.06530006 |
+|    mean velocity x | -1.29       |
+|    mean velocity y | -1.63       |
+|    mean velocity z | 26.4        |
+|    mean_ep_length  | 5e+03       |
+|    mean_reward     | -6.32e+06   |
+| time/              |             |
+|    total_timesteps | 500         |
+------------------------------------
+/home/015970994/anaconda3/envs/mastering-chaos/lib/python3.10/site-packages/stable_baselines3/common/evaluation.py:67: UserWarning: Evaluation environment is not wrapped with a ``Monitor`` wrapper. This may result in reporting modified episode lengths and rewards, if other wrappers happen to modify these. Consider wrapping environment first with ``Monitor`` wrapper.
+  warnings.warn(
+New best mean reward!
+Eval num_timesteps=1000, episode_reward=-6342722.99 +/- 23310.94
+Episode length: 5000.00 +/- 0.00
+-------------------------------------
+| eval/              |              |
+|    mean action     | 0.0031385722 |
+|    mean velocity x | -2.09        |
+|    mean velocity y | -2.44        |
+|    mean velocity z | 25.8         |
+|    mean_ep_length  | 5e+03        |
+|    mean_reward     | -6.34e+06    |
+| time/              |              |
+|    total_timesteps | 1000         |
+-------------------------------------
+Eval num_timesteps=1500, episode_reward=-6352755.50 +/- 53712.44
+Episode length: 5000.00 +/- 0.00
+-----------------------------------
+| eval/              |            |
+|    mean action     | 0.04298447 |
+|    mean velocity x | -0.583     |
+|    mean velocity y | -1.02      |
+|    mean velocity z | 27.2       |
+|    mean_ep_length  | 5e+03      |
+|    mean_reward     | -6.35e+06  |
+| time/              |            |
+|    total_timesteps | 1500       |
+-----------------------------------
+Eval num_timesteps=2000, episode_reward=-6353530.64 +/- 28908.02
+Episode length: 5000.00 +/- 0.00
+------------------------------------
+| eval/              |             |
+|    mean action     | 0.029083705 |
+|    mean velocity x | 2.48        |
+|    mean velocity y | 2.71        |
+|    mean velocity z | 25.4        |
+|    mean_ep_length  | 5e+03       |
+|    mean_reward     | -6.35e+06   |
+| time/              |             |
+|    total_timesteps | 2000        |
+------------------------------------
+-----------------------------
+| time/              |      |
+|    fps             | 36   |
+|    iterations      | 1    |
+|    time_elapsed    | 56   |
+|    total_timesteps | 2048 |
+-----------------------------
+Eval num_timesteps=2500, episode_reward=-6362282.47 +/- 6644.95
+Episode length: 5000.00 +/- 0.00
+------------------------------------------
+| eval/                   |              |
+|    mean action          | 0.013910408  |
+|    mean velocity x      | -0.283       |
+|    mean velocity y      | -0.491       |
+|    mean velocity z      | 25.3         |
+|    mean_ep_length       | 5e+03        |
+|    mean_reward          | -6.36e+06    |
+| time/                   |              |
+|    total_timesteps      | 2500         |
+| train/                  |              |
+|    approx_kl            | 0.0012373383 |
+|    clip_fraction        | 0.000244     |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -4.26        |
+|    explained_variance   | 4.47e-06     |
+|    learning_rate        | 0.001        |
+|    loss                 | 2.42e+08     |
+|    n_updates            | 10           |
+|    policy_gradient_loss | -0.00107     |
+|    std                  | 1            |
+|    value_loss           | 5.07e+08     |
+------------------------------------------
+Eval num_timesteps=3000, episode_reward=-6370091.05 +/- 53247.78
+Episode length: 5000.00 +/- 0.00
+-----------------------------------
+| eval/              |            |
+|    mean action     | 0.08989073 |
+|    mean velocity x | 1.75       |
+|    mean velocity y | 1.26       |
+|    mean velocity z | 26.1       |
+|    mean_ep_length  | 5e+03      |
+|    mean_reward     | -6.37e+06  |
+| time/              |            |
+|    total_timesteps | 3000       |
+-----------------------------------
+Eval num_timesteps=3500, episode_reward=-6352734.54 +/- 27638.46
+Episode length: 5000.00 +/- 0.00
+------------------------------------
+| eval/              |             |
+|    mean action     | 0.081731275 |
+|    mean velocity x | -1.67       |
+|    mean velocity y | -1.66       |
+|    mean velocity z | 25.5        |
+|    mean_ep_length  | 5e+03       |
+|    mean_reward     | -6.35e+06   |
+| time/              |             |
+|    total_timesteps | 3500        |
+------------------------------------
+Eval num_timesteps=4000, episode_reward=-6327887.76 +/- 34134.95
+Episode length: 5000.00 +/- 0.00
+------------------------------------
+| eval/              |             |
+|    mean action     | 0.022354124 |
+|    mean velocity x | 2.03        |
+|    mean velocity y | 1.93        |
+|    mean velocity z | 25.9        |
+|    mean_ep_length  | 5e+03       |
+|    mean_reward     | -6.33e+06   |
+| time/              |             |
+|    total_timesteps | 4000        |
+------------------------------------
+-----------------------------
+| time/              |      |
+|    fps             | 36   |
+|    iterations      | 2    |
+|    time_elapsed    | 113  |
+|    total_timesteps | 4096 |
+-----------------------------
+Eval num_timesteps=4500, episode_reward=-6289207.52 +/- 42327.34
+Episode length: 5000.00 +/- 0.00
+------------------------------------------
+| eval/                   |              |
+|    mean action          | -0.039649446 |
+|    mean velocity x      | 3.15         |
+|    mean velocity y      | 3.56         |
+|    mean velocity z      | 25.4         |
+|    mean_ep_length       | 5e+03        |
+|    mean_reward          | -6.29e+06    |
+| time/                   |              |
+|    total_timesteps      | 4500         |
+| train/                  |              |
+|    approx_kl            | 0.0026488558 |
+|    clip_fraction        | 0.000879     |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -4.26        |
+|    explained_variance   | -5.96e-07    |
+|    learning_rate        | 0.001        |
+|    loss                 | 1.62e+08     |
+|    n_updates            | 20           |
+|    policy_gradient_loss | -0.00152     |
+|    std                  | 1            |
+|    value_loss           | 4.59e+08     |
+------------------------------------------
+New best mean reward!
+Eval num_timesteps=5000, episode_reward=-6279474.14 +/- 30121.05
+Episode length: 5000.00 +/- 0.00
+-----------------------------------
+| eval/              |            |
+|    mean action     | 0.12354953 |
+|    mean velocity x | -0.413     |
+|    mean velocity y | -1.23      |
+|    mean velocity z | 25.4       |
+|    mean_ep_length  | 5e+03      |
+|    mean_reward     | -6.28e+06  |
+| time/              |            |
+|    total_timesteps | 5000       |
+-----------------------------------
+New best mean reward!
+Eval num_timesteps=5500, episode_reward=-6304706.01 +/- 26398.50
+Episode length: 5000.00 +/- 0.00
+------------------------------------
+| eval/              |             |
+|    mean action     | 0.056613315 |
+|    mean velocity x | -1.81       |
+|    mean velocity y | -1.72       |
+|    mean velocity z | 26.1        |
+|    mean_ep_length  | 5e+03       |
+|    mean_reward     | -6.3e+06    |
+| time/              |             |
+|    total_timesteps | 5500        |
+------------------------------------
+Eval num_timesteps=6000, episode_reward=-6319445.09 +/- 31414.37
+Episode length: 5000.00 +/- 0.00
+-----------------------------------
+| eval/              |            |
+|    mean action     | 0.03825065 |
+|    mean velocity x | 0.111      |
+|    mean velocity y | -0.264     |
+|    mean velocity z | 24.9       |
+|    mean_ep_length  | 5e+03      |
+|    mean_reward     | -6.32e+06  |
+| time/              |            |
+|    total_timesteps | 6000       |
+-----------------------------------
+-----------------------------
+| time/              |      |
+|    fps             | 36   |
+|    iterations      | 3    |
+|    time_elapsed    | 169  |
+|    total_timesteps | 6144 |
+-----------------------------
+Eval num_timesteps=6500, episode_reward=-6313592.59 +/- 24974.46
+Episode length: 5000.00 +/- 0.00
+------------------------------------------
+| eval/                   |              |
+|    mean action          | 0.044805657  |
+|    mean velocity x      | 0.163        |
+|    mean velocity y      | -0.41        |
+|    mean velocity z      | 23.9         |
+|    mean_ep_length       | 5e+03        |
+|    mean_reward          | -6.31e+06    |
+| time/                   |              |
+|    total_timesteps      | 6500         |
+| train/                  |              |
+|    approx_kl            | 0.0017876078 |
+|    clip_fraction        | 0.00117      |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -4.26        |
+|    explained_variance   | 9.72e-06     |
+|    learning_rate        | 0.001        |
+|    loss                 | 2.17e+08     |
+|    n_updates            | 30           |
+|    policy_gradient_loss | -0.00133     |
+|    std                  | 1            |
+|    value_loss           | 4.56e+08     |
+------------------------------------------
+Eval num_timesteps=7000, episode_reward=-6266993.60 +/- 19933.93
+Episode length: 5000.00 +/- 0.00
+------------------------------------
+| eval/              |             |
+|    mean action     | 0.078308165 |
+|    mean velocity x | -0.675      |
+|    mean velocity y | -0.679      |
+|    mean velocity z | 26.5        |
+|    mean_ep_length  | 5e+03       |
+|    mean_reward     | -6.27e+06   |
+| time/              |             |
+|    total_timesteps | 7000        |
+------------------------------------
+New best mean reward!
+Eval num_timesteps=7500, episode_reward=-6293159.48 +/- 20942.83
+Episode length: 5000.00 +/- 0.00
+------------------------------------
+| eval/              |             |
+|    mean action     | 0.040538076 |
+|    mean velocity x | -2.07       |
+|    mean velocity y | -2.05       |
+|    mean velocity z | 26.5        |
+|    mean_ep_length  | 5e+03       |
+|    mean_reward     | -6.29e+06   |
+| time/              |             |
+|    total_timesteps | 7500        |
+------------------------------------
+Eval num_timesteps=8000, episode_reward=-6307373.50 +/- 39247.16
+Episode length: 5000.00 +/- 0.00
+-----------------------------------
+| eval/              |            |
+|    mean action     | 0.08774772 |
+|    mean velocity x | 2.98       |
+|    mean velocity y | 3.02       |
+|    mean velocity z | 26         |
+|    mean_ep_length  | 5e+03      |
+|    mean_reward     | -6.31e+06  |
+| time/              |            |
+|    total_timesteps | 8000       |
+-----------------------------------
+-----------------------------
+| time/              |      |
+|    fps             | 36   |
+|    iterations      | 4    |
+|    time_elapsed    | 226  |
+|    total_timesteps | 8192 |
+-----------------------------
+Eval num_timesteps=8500, episode_reward=-6257574.09 +/- 33983.25
+Episode length: 5000.00 +/- 0.00
+------------------------------------------
+| eval/                   |              |
+|    mean action          | 0.033309143  |
+|    mean velocity x      | -1.8         |
+|    mean velocity y      | -1.62        |
+|    mean velocity z      | 25.2         |
+|    mean_ep_length       | 5e+03        |
+|    mean_reward          | -6.26e+06    |
+| time/                   |              |
+|    total_timesteps      | 8500         |
+| train/                  |              |
+|    approx_kl            | 0.0025542872 |
+|    clip_fraction        | 0.00137      |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -4.27        |
+|    explained_variance   | -2.38e-07    |
+|    learning_rate        | 0.001        |
+|    loss                 | 2.09e+08     |
+|    n_updates            | 40           |
+|    policy_gradient_loss | -0.00192     |
+|    std                  | 1            |
+|    value_loss           | 4.78e+08     |
+------------------------------------------
+slurmstepd: error: *** JOB 62468 ON c4 CANCELLED AT 2023-02-14T11:59:32 ***

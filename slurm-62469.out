@@ -1,0 +1,7 @@
+Using cpu device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Logging to ./Lorenz_tensorboard/PPO_6
+/home/015970994/anaconda3/envs/mastering-chaos/lib/python3.10/site-packages/stable_baselines3/common/evaluation.py:67: UserWarning: Evaluation environment is not wrapped with a ``Monitor`` wrapper. This may result in reporting modified episode lengths and rewards, if other wrappers happen to modify these. Consider wrapping environment first with ``Monitor`` wrapper.
+  warnings.warn(
+slurmstepd: error: *** JOB 62469 ON c4 CANCELLED AT 2023-02-14T12:00:07 ***

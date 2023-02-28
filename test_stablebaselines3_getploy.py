@@ -12,7 +12,7 @@ from abc import ABC, abstractmethod
 from typing import Any, Callable, Dict, List, Optional, Union
 from stable_baselines3.common.vec_env import DummyVecEnv, VecEnv, sync_envs_normalization
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d import Axes3D 
 from stable_baselines3.common.logger import Figure
 
 
@@ -55,13 +55,13 @@ def f_t (dyn, f, dt, x0, T, action):
 
 x = f_t(dyn_lorenz, lorenz, 0.01, x0, time_step, 0)
 
-env = gym.make("lorenz_u-v0")
+env = gym.make("lorenz_u-v0", infinite=True)
 # env = gym.make('Pendulum-v1')
 
 new_x = []
 #del model # remove to demonstrate saving and loading
 
-model = PPO.load("final010623/Lorenz/ppo_lorenz_8_015rad_100alpha_-1reward_fixed")
+model = PPO.load("ppo_lorenz_0_015rad_100alpha_rreward_fixed")
 env.reset()
 obs = x[:,-1]
 new_x.append(obs)
@@ -83,7 +83,7 @@ for i in range(len(new_x)):
 
 # [-8.485, -8.485, 27]
 fig = plt.figure(figsize=(10,10))
-ax = fig.gca(projection="3d")
+ax = fig.add_subplot(projection="3d")
 ax.scatter3D(x0[0], x0[1], x0[2], s=50,alpha=1)
 ax.plot3D(x[0], x[1], x[2], alpha=0.4)
 ax.plot3D(xfinal[0], xfinal[1], xfinal[2], c='green', alpha=0.6)
