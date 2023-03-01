@@ -61,7 +61,7 @@ env = gym.make("lorenz_u-v0", infinite=True)
 new_x = []
 #del model # remove to demonstrate saving and loading
 
-model = PPO.load("ppo_lorenz_0_015rad_100alpha_rreward_fixed")
+model = PPO.load("models/ppo_lorenz_0_1rad_100alpha_rreward_fixed")
 env.reset()
 obs = x[:,-1]
 new_x.append(obs)
@@ -131,7 +131,7 @@ ax.set_xlabel('time')
 ax.set_ylabel('x')
 ax.plot(np.array(list(range(len(x[2])))), x[0])
 ax.plot(np.array(list(range(len(xfinal[2]))))+time_step, xfinal[0])
-ax.axhline(y = 8.485, color = 'r', linestyle = 'dashdot')
+ax.axhline(y = 0, color = 'r', linestyle = 'dashdot')
 
 ax1 = fig.add_subplot(222)
 ax1.set_title('y vs. timestep')
@@ -139,7 +139,7 @@ ax1.set_xlabel('time')
 ax1.set_ylabel('y')
 ax1.plot(np.array(list(range(len(x[2])))), x[1])
 ax1.plot(np.array(list(range(len(xfinal[2]))))+time_step, xfinal[1])
-ax1.axhline(y = 8.485, color = 'r', linestyle = 'dashdot')
+ax1.axhline(y = 0, color = 'r', linestyle = 'dashdot')
 
 ax2 = fig.add_subplot(223)
 ax2.set_title('z vs. timestep')
@@ -147,11 +147,11 @@ ax2.set_xlabel('time')
 ax2.set_ylabel('z')
 ax2.plot(np.array(list(range(len(x[2])))), x[2])
 ax2.plot(np.array(list(range(len(xfinal[2]))))+time_step, xfinal[2])
-ax2.axhline(y = 27, color = 'r', linestyle = 'dashdot')
+ax2.axhline(y = 0, color = 'r', linestyle = 'dashdot')
 
 fig.suptitle('Stablization at (8.485,8.485,27)', fontsize=18)
 fig.tight_layout()
-plt.savefig('coordinatesvstime8.png')
+plt.savefig('coordinatesvstime0.png')
 
 # env.reset()
 # print(env.step(env.action_space.sample()))

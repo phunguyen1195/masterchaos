@@ -40,7 +40,7 @@ class Lorenzle(gym.Env):
         self.ax = self.fig.add_subplot(projection="3d")
         self.ax.scatter(self.goal_state[0],self.goal_state[1],self.goal_state[2], s=100, color="red")
 
-        self.T = 1000
+        self.T = 801
         self.close_to_goal = True
         self.sphere_R = 2
         self.sigma = 10

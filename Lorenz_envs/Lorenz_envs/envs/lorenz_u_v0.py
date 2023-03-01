@@ -23,7 +23,7 @@ class Lorenzu(gym.Env):
         "render_fps": 30,
     }
 
-    def __init__(self, render_mode: Optional[str] = None, g=10.0):
+    def __init__(self, render_mode: Optional[str] = None, g=10.0, infinite=False):
         super(Lorenzu, self).__init__() 
         # self.max_speed = 8
         # self.max_torque = 2.0
@@ -40,6 +40,7 @@ class Lorenzu(gym.Env):
         self.ax = self.fig.add_subplot(projection="3d")
         self.ax.scatter(self.goal_state[0],self.goal_state[1],self.goal_state[2], s=100, color="red")
 
+        self.infinite = infinite
         self.sphere_R = 1
         self.sigma = 10
         self.r = 28
@@ -148,7 +149,9 @@ class Lorenzu(gym.Env):
         # print (np.linalg.norm(self.state - self.goal_state))
         # print('dist',np.linalg.norm(x - self.goal_state))
         # terminated = np.linalg.norm(x - self.goal_state) <= 0.5
-        terminated = np.linalg.norm(x - self.goal_state) <= self.sphere_R
+        terminated = False
+        if self.infinite == False:
+            terminated = np.linalg.norm(x - self.goal_state) <= self.sphere_R
         # terminated = np.linalg.norm(x - self.goal_state) <= 0.1
 
         self.state = newx

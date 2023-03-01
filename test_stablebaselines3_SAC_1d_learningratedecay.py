@@ -57,7 +57,7 @@ def f_t (dyn, f, dt, x0, T, action):
 x = f_t(dyn_lorenz, lorenz, 0.01, x0, 500, 0)
 
 
-env = gym.make("lorenz_u-v0", infinite=True)
+env = gym.make("lorenz_u-v0")
 # env = gym.make("rossler-v0")
 # env = gym.make('Pendulum-v1')
 
@@ -363,14 +363,14 @@ model = PPO('MlpPolicy', env ,gamma=0.98,
     # learning_rate=linear_schedule(4e-3),
     learning_rate=1e-3, 
     tensorboard_log="./Lorenz_tensorboard/", verbose=1)
-model.learn(total_timesteps=2500000, callback=eval_callback)
+model.learn(total_timesteps=1500000, callback=eval_callback)
 
-model.save("ppo_lorenz_8_1rad_100alpha_rreward_fixed")
+model.save("models/ppo_lorenz_0_1rad_100alpha_rreward_fixed")
 
 
 del model # remove to demonstrate saving and loading
 new_x = []
-model = PPO.load("ppo_lorenz_8_1rad_100alpha_rreward_fixed")
+model = PPO.load("models/ppo_lorenz_0_1rad_100alpha_rreward_fixed")
 env.reset()
 obs = x[:,-1]
 new_x.append(obs)
@@ -395,6 +395,6 @@ ax.set_ylabel('x')
 ax.plot(np.array(list(range(len(x[0])))), x[0])
 ax.plot(np.array(list(range(len(xfinal[0]))))+500, xfinal[0])
 ax.axhline(y = 0, color = 'r', linestyle = 'dashdot')
-plt.savefig('xvstime8.png')
+plt.savefig('xvstime0.png')
 # env.reset()
 # print(env.step(env.action_space.sample()))

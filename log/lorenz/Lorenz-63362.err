@@ -1,0 +1,9 @@
+/home/015970994/anaconda3/envs/mastering-chaos/lib/python3.10/site-packages/stable_baselines3/common/evaluation.py:67: UserWarning: Evaluation environment is not wrapped with a ``Monitor`` wrapper. This may result in reporting modified episode lengths and rewards, if other wrappers happen to modify these. Consider wrapping environment first with ``Monitor`` wrapper.
+  warnings.warn(
+/home/015970994/anaconda3/envs/mastering-chaos/lib/python3.10/site-packages/stable_baselines3/common/evaluation.py:67: UserWarning: Evaluation environment is not wrapped with a ``Monitor`` wrapper. This may result in reporting modified episode lengths and rewards, if other wrappers happen to modify these. Consider wrapping environment first with ``Monitor`` wrapper.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/015970994/masterchaos/test_stablebaselines3_SAC_1d_learningratedecay_le.py", line 366, in <module>
+    model.learn(total_timesteps=80000, callback=eval_callback)
+  File "/home/015970994/anaconda3/envs/mastering-chaos/lib/python3.10/site-packages/stable_baselines3/ppo/ppo.py", line 307, in learn
+slurmstepd: error: *** STEP 63362.0 ON g10 CANCELLED AT 2023-02-28T11:38:30 ***
